@@ -1,4 +1,4 @@
-package level1_java_high_correct_answer_rate_desc;
+package level1_high_correct_answer_rate_desc;
 
 //자릿수더하기
 

@@ -1,4 +1,4 @@
-package level1_java_high_correct_answer_rate_desc;
+package level1_high_correct_answer_rate_desc;
 //평균 구하기
 public class P4 {
     public double solution(int[] arr) {

@@ -1,5 +1,5 @@
-package practice;
-
+package level1_java_high_correct_answer_rate_desc;
+//x만큼 간격이 있는 n개의 숫자
 public class P1 {
     public long[] solution(int x, int n) {
         long[] answer = new long[n];

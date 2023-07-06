@@ -7,6 +7,6 @@
 <title>어떤 게시판을 만들까요</title>
 </head>
 <body>
- 
+  
 </body>
 </html>

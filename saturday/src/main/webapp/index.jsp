@@ -17,8 +17,9 @@
 		<jsp:include page="header.jsp"/>
 	</div>
 	
-	<div id="body">
+	<div id="content">
 		<%-- member_join.jsp를 넣어야 하나.. --%> 
+		<jsp:include page="member/member_join.jsp"/>
 	</div>
 	
 	<div id="footer.jsp">

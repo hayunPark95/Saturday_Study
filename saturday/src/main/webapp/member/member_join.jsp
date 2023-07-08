@@ -32,6 +32,17 @@
 	$.("#join").submit(function(){
 		var submitResult=true;
 		
-		// 에러페이지 출력? 
+		$.("에러페이지 아직안만듬~").css("display","none");
+		
+		if($("#id").val()==""){
+			$("#idEnter").css("display","blcok");
+			submitResult=false;
+		} else if($("#idCheckEnter").val()=="0"){
+			$("#idCheckEnter").css("display","block");
+			submitResult=false;
+		}
+		return submitResult;
 	})
+	// ~~~ 
+	
 </script>

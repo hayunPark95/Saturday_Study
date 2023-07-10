@@ -35,7 +35,7 @@
 		<div><span class="id">[<%=id %>]</span>는 이미 사용중
 		<br>새로운 아이디를 입력하세요</div>
 		<div>
-			<form name="check" method="POST">
+			<form name="checkForm" action="" method="POST">
 				<input type="text" name="id">
 				<button type="button" onclick="checkId();">중복확인하기</button>
 			</form>
@@ -47,9 +47,11 @@
 			if(id==""){
 				document.getElementById("message").innerHTML="아이디를 입력하세요";
 				return;
-			}
+			}else{
 			checkForm.submit();
+			}
 		}
+		
 		</script>
 	<%} %>
 </body>

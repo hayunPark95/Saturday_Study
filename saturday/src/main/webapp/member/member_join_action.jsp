@@ -12,12 +12,12 @@
 	String pw=request.getParameter("password");
 	String name=request.getParameter("name");
 	
-	DTO member=new DTO();
-	member.setId(id);
-	member.setPassword(pw);
-	member.setName(name);
+	DTO saturdaymember=new DTO();
+	saturdaymember.setId(id);
+	saturdaymember.setPassword(pw);
+	saturdaymember.setName(name);
 	
-	DAO.getdDao().insertMember(member);
+	DAO.getdDao().insertMember(saturdaymember);
 	
 	response.sendRedirect("member_main.jsp");
 %>

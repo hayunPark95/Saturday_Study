@@ -10,8 +10,8 @@
 	String id=request.getParameter("id");
 	String password=request.getParameter("password");
 	
-	DTO member=DAO.getdDao().selectMember(id);
-	if(member==null||member.getPassword().equals(password)){
+	DTO saturdaymember=DAO.getdDao().selectMember(id);
+	if(saturdaymember==null||saturdaymember.getPassword().equals(password)){
 		session.setAttribute("message", "검색된 회원정보가 없습니다");
 		response.sendRedirect("member_login.jsp");
 		return;

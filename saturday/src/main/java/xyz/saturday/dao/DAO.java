@@ -23,17 +23,17 @@ public class DAO extends JdbcDAO{
 	}
 	
 	//회원가입할 떄 DB에 회원정보 행 추가하는 메소드
-	public void insertMember(DTO member) {
+	public void insertMember(DTO saturdaymember) {
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		try {
 			con=getConnection();
 			
-			String sql="insert member set id=?,password=?,name=?";
+			String sql="insert saturdaymember set id=?,password=?,name=?";
 			pstmt=con.prepareStatement(sql);
-			pstmt.setString(1,member.getId());
-			pstmt.setString(2, member.getPassword());
-			pstmt.setString(3, member.getName());
+			pstmt.setString(1,saturdaymember.getId());
+			pstmt.setString(2, saturdaymember.getPassword());
+			pstmt.setString(3, saturdaymember.getName());
 			
 		} catch (SQLException e) {
 			System.out.println("sql 문장에서 에러");
@@ -51,7 +51,7 @@ public class DAO extends JdbcDAO{
 		try {
 			con=getConnection();
 			
-			String sql="select * from member where id=?";
+			String sql="select * from saturdaymember where id=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs=pstmt.executeQuery();

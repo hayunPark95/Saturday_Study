@@ -21,11 +21,10 @@
 	int rows=DAO.getDao().createAccount(create);
 	
 	if(rows>0) {
+		session.setAttribute("createMessage_two", "이거 내가 어디다가 만들어야했드라 진짜 열받게 하나하면 하나안되고 하;;!");
 		response.sendRedirect("login.jsp");
 	} else {
-		session.setAttribute("createMessage", "중복되는 아이디입니다. 다른 아이디를 선택해주세요");
-		// 혹시 여기서 추천아이디 같은 항목을 만들수 있나?
-				//->만들수는 있는데 내가 만들 깜냥이안됨.. 
+		session.setAttribute("createMessage", "중복되는 아이디입니다. 다른 아이디를 선택해주세요"); 
 		session.setAttribute("create", create);
 		response.sendRedirect("create_account.jsp");
 	}

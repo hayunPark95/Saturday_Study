@@ -28,29 +28,29 @@
 <title>토요일 스터디</title>
 <script type="text/javascript">
 function createAccount(){<%--버튼의 클릭이벤트 발생시에 해야하는 행동들을 적어놓은 함수--%>
-	if(f.id.value==""){
+	if(createForm.id.value==""){
 		alert("아이디를 입력하세요");
-		f.id.focus();
+		createForm.id.focus();
 		return;
 	}
-	if(f.password.value==""){
+	if(createForm.password.value==""){
 		alert("비밀번호를 입력하세요");
-		f.password.focus();
+		createForm.password.focus();
 		return;
 	}
-	if(f.name.value==""){
+	if(createForm.name.value==""){
 		alert("이름를 입력하세요");
-		f.name.focus();
+		createForm.name.focus();
 		return;
 	}
 	
-	f.action="create_account_action.jsp"; <%--위의 항목들을 클릭이벤트 발생시에 create_accoutn_action.jsp로 전달--%>
-	f.submit();
+	createForm.action="create_account_action.jsp"; <%--위의 항목들을 클릭이벤트 발생시에 create_accoutn_action.jsp로 전달--%>
+	createForm.submit();
 }
 </script>
 </head>
 <body>
-	<form method="post">
+	<form name="createForm" method="post">
 	<table>
 		<tr>
 			<td width=100 align="center">아이디</td>
@@ -76,8 +76,8 @@ function createAccount(){<%--버튼의 클릭이벤트 발생시에 해야하는
 	<table>
 		<tr>
 			<td align="center">
-				<input type="button" value="계정생성" onclick="createAccount">
-				<input type="button" value="로그인" onclick="location.gref='loign.jsp'">
+				<input type="button" value="계정생성" onclick="createAccount();">
+				<input type="button" value="로그인" onclick="location.href='login.jsp'">
 			</td> 
 		</tr>
 	</table>

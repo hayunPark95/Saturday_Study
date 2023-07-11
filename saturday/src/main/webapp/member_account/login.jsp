@@ -25,26 +25,26 @@
 <title>토요일 스터디</title>
 <script type="text/javascript">
 function loginAccount(){<%--버튼의 클릭이벤트 발생시에 해야하는 행동들을 적어놓은 함수--%>
-	if(f.id.value==""){
+	if(loginForm.id.value==""){
 		alert("아이디를 반드시 입력하세요");
-		f.id.focus();
+		loginForm.id.focus();
 		return;
 	}
-	if(f.password.value==""){
+	if(loginForm.password.value==""){
 		alert("비밀번호를 반드시 입력하세요");
-		f.password.focus();
+		loginForm.password.focus();
 		return;
 	}
 	
-	f.action="login_action.jsp"; <%--위의 항목들을 클릭이벤트 발생시에 login_action.jsp로 전달--%>
-	f.submit();
+	loginForm.action="login_action.jsp"; <%--위의 항목들을 클릭이벤트 발생시에 login_action.jsp로 전달--%>
+	loginForm.submit();
 }
 </script>
 </head>
 <body>
 	<table>
 		<%if(login==null) {%>
-			<form method="post">
+			<form name="loginForm" method="post">
 				<table>
 					<tr>
 						<td width=100 align="center">아이디</td>
@@ -80,14 +80,6 @@ function loginAccount(){<%--버튼의 클릭이벤트 발생시에 해야하는 
 				<tr>
 					<td>
 						<%=login.getName() %>님이 접속하였습니다
-					</td>
-				</tr>
-			</table>
-			<hr>
-			<table>
-				<tr>
-					<td>
-					<input type="button" value="로그아웃" onclick="logout.jsp">
 					</td>
 				</tr>
 			</table>

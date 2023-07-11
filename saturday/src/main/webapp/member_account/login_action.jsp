@@ -25,6 +25,12 @@
 		response.sendRedirect("login.jsp");
 		return;
 	}
-	session.setAttribute("login", login);
-	response.sendRedirect("main.jsp");
+	session.setAttribute("login", login);//로그인상태유지를 위한 권한 관련 객체 세션에다가 저장
+	/*
+	RequestDispatcher goMain=request.getRequestDispatcher("main.jsp");
+	request.setAttribute("id", id);
+	request.setAttribute("password", password);
+	goMain.forward(request, response);
+	*/
+	response.sendRedirect("main.jsp");//redirct를 쓰면안되나? main.jsp로 안감;; 
 %>

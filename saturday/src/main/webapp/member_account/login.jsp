@@ -42,6 +42,7 @@ function loginAccount(){<%--버튼의 클릭이벤트 발생시에 해야하는 
 </script>
 </head>
 <body>
+<%-- 노란줄이 계속 군데군데 들어가있는데 왜 그런지 알고싶음 --%>
 	<table>
 		<%if(login==null) {%>
 			<form name="loginForm" method="post">

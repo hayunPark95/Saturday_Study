@@ -59,31 +59,32 @@ function loginAccount(){<%--버튼의 클릭이벤트 발생시에 해야하는 
 						</td>
 					</tr>
 				</table>
-			</form>
-			<hr>
-			<table>
-				<tr>
-					<td>
-						<input type="button" value="로그인하기" onclick="loginAccount();">
-					</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td>
-						<button type="button" onclick="location.href='create_account.jsp'">계정만들기</button>
-					</td>
-				</tr>
-			</table>
-		<%} else {%>
-			<table>
-				<tr>
-					<td>
-						<%=login.getName() %>님이 접속하였습니다
-					</td>
-				</tr>
-			</table>
-		<%} %>
+			</form>		
+				<table>
+					<tr>
+						<td>
+							<input type="button" value="로그인하기" onclick="loginAccount();">
+						</td>
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<td>
+							<button type="button" onclick="location.href='create_account.jsp'">계정만들기</button>
+						</td>
+					</tr>
+				</table>
+			<%} else {%>
+				<table>
+					<tr>
+						<td>
+							<%=login.getId() %>님이 접속하였습니다
+						</td>
+					</tr>
+				</table>
+			<%} %>
+		</tabel>
 	</table>
 </body>
 </html>

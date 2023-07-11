@@ -55,19 +55,19 @@ function createAccount(){<%--버튼의 클릭이벤트 발생시에 해야하는
 		<tr>
 			<td width=100 align="center">아이디</td>
 			<td width=600>
-				<input type="text" id="id" value="<%=create.getId()%>">
+				<input type="text" name="id" id="id" value="<%=create.getId()%>">
 			</td>
 		</tr>
 		<tr>
 			<td width=100 align="center">비밀번호</td>
 			<td width=600>
-				<input type="password" id="password" value="<%=create.getPassword()%>">
+				<input type="password" name="password" id="password" value="<%=create.getPassword()%>">
 			</td>
 		</tr>
 		<tr>
 			<td width=100 align="center">이름</td>
 			<td width=600>
-				<input type="text" id="name" value="<%=create.getName()%>">
+				<input type="text" name="name" id="name" value="<%=create.getName()%>">
 			</td>
 		</tr>
 	</table>

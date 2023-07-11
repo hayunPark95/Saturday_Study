@@ -23,7 +23,8 @@
 		session.setAttribute("message", "잘못된 비밀번호 입력");
 		session.setAttribute("id", id);
 		response.sendRedirect("login.jsp");
+		return;
 	}
-	session.setAttribute("password", password);
-	response.sendRedirect("login.jsp");
+	session.setAttribute("login", login);
+	response.sendRedirect("main.jsp");
 %>

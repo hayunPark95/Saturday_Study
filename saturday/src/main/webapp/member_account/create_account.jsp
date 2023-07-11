@@ -2,6 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	// id 중복체크 자체를 Oracle에 떠넘기는식으로 진행
+	// id가 중복된다면 pk로 걸린 createaccount 테이블에서 걸러낼거기 때문에 따로 JSP로 만들지는 않음
 	String createMassage=(String)session.getAttribute("createMessage");
 	if(createMassage==null){
 		createMassage="";
@@ -23,9 +25,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>극혐</title>
-<script type="text/javascript" language="Javascript">
-function createArea(){
+<title>토요일 스터디</title>
+<script type="text/javascript">
+function createAccount(){<%--버튼의 클릭이벤트 발생시에 해야하는 행동들을 적어놓은 함수--%>
 	if(f.id.value==""){
 		alert("아이디를 입력하세요");
 		f.id.focus();
@@ -42,17 +44,41 @@ function createArea(){
 		return;
 	}
 	
-	f.action="create_account_action.jsp";
+	f.action="create_account_action.jsp"; <%--위의 항목들을 클릭이벤트 발생시에 create_accoutn_action.jsp로 전달--%>
 	f.submit();
 }
 </script>
 </head>
-<body></body>
+<body>
+	<form method="post">
+	<table>
+		<tr>
+			<td width=100 align="center">아이디</td>
+			<td width=600>
+				<input type="text" id="id" value="<%=create.getId()%>">
+			</td>
+		</tr>
+		<tr>
+			<td width=100 align="center">비밀번호</td>
+			<td width=600>
+				<input type="password" id="password" value="<%=create.getPassword()%>">
+			</td>
+		</tr>
+		<tr>
+			<td width=100 align="center">이름</td>
+			<td width=600>
+				<input type="text" id="name" value="<%=create.getName()%>">
+			</td>
+		</tr>
+	</table>
+	</form>
 	<hr>
 	<table>
 		<tr>
-			<td></td>
-			<td><%=create %></td>
+			<td align="center">
+				<input type="button" value="계정생성" onclick="createAccount">
+				<input type="button" value="로그인" onclick="location.gref='loign.jsp'">
+			</td> 
 		</tr>
 	</table>
 </body>

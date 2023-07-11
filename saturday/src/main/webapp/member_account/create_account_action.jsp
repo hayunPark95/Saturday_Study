@@ -1,12 +1,32 @@
+<%@page import="xyz.saturday.dao.DAO"%>
+<%@page import="xyz.saturday.dto.DTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<%
+	if(request.getMethod().equals("GET")){
+		response.sendRedirect("error.jsp");
+		return;
+	}
+	request.setCharacterEncoding("utf-8");
+	
+	String id=request.getParameter("id");
+	String password=request.getParameter("password");
+	String name=request.getParameter("name");
+	
+	DTO create=new DTO();
+	create.setId(id);
+	create.setPassword(password);
+	create.setName(name);
+	
+	int rows=DAO.getDao().createAccount(create);
+	
+	if(rows>0) {
+		response.sendRedirect("login.jsp");
+	} else {
+		session.setAttribute("createMessage", "중복되는 아이디입니다. 다른 아이디를 선택해주세요");
+		// 혹시 여기서 추천아이디 같은 항목을 만들수 있나?
+				//->만들수는 있는데 내가 만들 깜냥이안됨.. 
+		session.setAttribute("create", create);
+		response.sendRedirect("create_account.jsp");
+	}
+%>
